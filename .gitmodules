@@ -1,0 +1,3 @@
+[submodule "flintstone"]
+	path = flintstone
+	url = git@github.com:saalfeldlab/flintstone.git
