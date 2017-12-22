@@ -2,13 +2,13 @@
 	<modelVersion>4.0.0</modelVersion>
   
 	<parent>
-		<groupId>sc.fiji</groupId>
-		<artifactId>pom-bigdataviewer</artifactId>
-		<version>5.0.0</version>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>17.2.0</version>
 	</parent>
   
 	<artifactId>bigcat-spark-downsampler</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	
   	<name>BIGCAT-SPARK-DOWNSAMPLER</name>
 	<description>Spark downsampler for BIGCAT</description>
@@ -31,12 +31,12 @@
 
 	<repositories>
 		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-		<repository>
 			<id>saalfeld-lab-maven-repo</id>
 			<url>https://saalfeldlab.github.io/maven</url>
+		</repository>
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
 		</repository>
 	</repositories>
 	
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>bigdataviewer-core</artifactId>
-			<version>4.0.3-SNAPSHOT</version>
+			<version>4.3.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>sc.fiji</groupId>
@@ -60,12 +60,20 @@
 		<dependency>
 			<groupId>net.imglib2</groupId>
 			<artifactId>imglib2</artifactId>
-			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>net.imglib2</groupId>
 			<artifactId>imglib2-cache</artifactId>
-			<version>1.0.0-beta-8-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5-imglib2</artifactId>
+			<version>1.1.0</version>
 		</dependency>
 	</dependencies>
 
@@ -105,4 +113,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<groupId>org.saalfeldlab</groupId>
 </project>
