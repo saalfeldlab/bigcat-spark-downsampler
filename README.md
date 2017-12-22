@@ -3,25 +3,7 @@ Command-line tool for downsampling label data (stored as LabelMultisetTypes in a
 
 ## Compile
 
-Because this repository uses a branch of [BigCAT](https://github.com/shrucis1/bigcat) that is not currently merged into master, to compile from source you will first have to check out that branch (which requires the latest version of N5, which also needs to be compiled).
-
- - Clone [N5](https://github.com/saalfeldlab/n5) to any location
-
- - Use Maven to install N5 1.1.4-SNAPSHOT into your local repository
-
-```
-mvn clean install
-```
-
- - Then, clone `shrucis1/bigcat` to a location of your choice.
-
- - Switch to the `n5cacheloader` branch with the necessary changes.
-
-```
-git checkout n5cacheloader
-```
-
- - Use Maven to install this branch of BigCAT into your local repository
+Compile and install the master branch (version 0.0.3-SNAPSHOT) of [BigCAT](https://github.com/saalfeldlab/bigcat).
 
 ```
 mvn clean install
@@ -59,7 +41,7 @@ a downsampled pixel.
 ## Usage
 
 ```
-java -Dspark.master=[spark_master] -jar target/bigcat-spark-downsampler-0.0.1-SNAPSHOT-jar-with-dependencies.jar [args]
+java -Dspark.master=[spark_master] -jar target/bigcat-spark-downsampler-0.0.2-SNAPSHOT-jar-with-dependencies.jar [args]
 ```
 
 #### Arguments
@@ -94,7 +76,7 @@ Note that the `spark.master` property must be set when running as well. See [her
 #### Example
 
 ```
-java -Dspark.master=local[*] -jar target/bigcat-spark-downsampler-0.0.1-SNAPSHOT-jar-with-dependencies.jar -ig ~/cremi-n5/ -id sampleA-fullres -od sampleA-8x8x2 -f 8,8,2 -c GZIP -pb 4,4,4
+java -Dspark.master=local[*] -jar target/bigcat-spark-downsampler-0.0.2-SNAPSHOT-jar-with-dependencies.jar -ig ~/cremi-n5/ -id sampleA-fullres -od sampleA-8x8x2 -f 8,8,2 -c GZIP -pb 4,4,4
 ```
 
 Would downsample the N5 label dataset at `~/cremi-n5/sampleA-fulres` by a factor of 8x8x2, and write to an N5 dataset (with GZIP compression) at `~/cremi-n5/sampleA-8x8x2`.
